@@ -25,29 +25,51 @@
 
 ### 7-islower.py
 - Checks if letter is lowercase
+    - Prototype: def islower(c):
+    - Used with: 7main.py
 
 ### 8-uppercase.py
 - Prints string in uppercase
+    - Prototype: def uppercase(str):
+    - Used with: 8main.py
 
 ### 9-print_last_digit.py
 - Prints last digit of integer
+    - Prototype: def print_last_digit(number):
+    - Used with: 9main.py
 
 ### 10-add.py
 - Adds two integers
+    - Prototype: def add(a, b):
+    - Used with: 10main.py
 
 ### 11-pow.py
 - Computes a to the power of b
+    - Prototype: def pow(a, b):
+    - Used with: 11main.py
 
 ### 12-fizzbuzz.py
 - Prints fizzbuzz
+    - Prototype: def fizzbuzz():
+    - Used with: 12main.py
 
-### 113-insert_number.c
+### 13-insert_number.c
 - Technical interview preparation
 - Inserts number in linked list
 - Header:
     - lists.h
 - Prototype:
     - ilistint_t *insert_node(listint_t **head, int number);
+
+## Advanced
+
+### 100-print_tebahpla.py
+- Prints alphabet in reverse order with every other letter capitalized
+
+### 101-remove_char_at.py
+- Removes character in string at specified position
+    - Prototype: def remove_char_at(str, n):
+    - Used with: 101main.py
 
 ## Learning Objectives
 - Why Python programming is awesome
