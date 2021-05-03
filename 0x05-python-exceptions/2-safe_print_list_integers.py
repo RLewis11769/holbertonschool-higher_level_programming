@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 safe_print_list_integers - prints first x elements of a list if integer
 my_list - list of elements of any type

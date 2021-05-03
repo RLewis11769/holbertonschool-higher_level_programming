@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 safe_print_integer - prints integer only
 value - input of any type

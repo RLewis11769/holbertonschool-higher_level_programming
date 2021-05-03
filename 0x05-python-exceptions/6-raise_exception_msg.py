@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 raise_exception_msg - raises name exception with message
 """

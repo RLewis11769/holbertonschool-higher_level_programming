@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/python3
+
 """
 raise_exception - raises type exception
 """
