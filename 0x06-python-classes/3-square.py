@@ -4,7 +4,8 @@
 
 
 class Square:
-    """ Represents class with private size attribute for each instance """
+    """ Represents class to define Square parameters """
+
     def __init__(self, size=0):
         """ Method that raises exceptions and initializes size """
         if not isinstance(size, int):
@@ -14,5 +15,6 @@ class Square:
         self.__size = size
 
     def area(self):
-        area = self.__size ** 2
+        """ Method to find area of square """
+        area = self.__size * self.__size
         return area
