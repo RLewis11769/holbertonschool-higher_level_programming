@@ -6,6 +6,8 @@ a - first integer (to be divided)
 b - second integer (to divide)
 Return: result of division
 """
+
+
 def safe_print_division(a, b):
     try:
         div = a / b

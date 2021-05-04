@@ -7,6 +7,8 @@ my_list_2 - second list (to divide)
 list_length - length of list
 Return: new list including results of division
 """
+
+
 def list_division(my_list_1, my_list_2, list_length):
         new_list = []
         for val in range(list_length):

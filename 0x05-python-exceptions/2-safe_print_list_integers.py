@@ -6,6 +6,8 @@ my_list - list of elements of any type
 x - number of elements to print
 Returns: number of integers printed
 """
+
+
 def safe_print_list_integers(my_list=[], x=0):
     count = 0
     for val in range(x):
