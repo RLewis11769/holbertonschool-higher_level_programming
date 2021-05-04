@@ -11,7 +11,7 @@ class Square:
 
     @property
     def size(self):
-        """ Getter method to set private attributes with improved readability """
+        """ Getter method to set private attributes with better readability """
         return self.__size
 
     @size.setter
