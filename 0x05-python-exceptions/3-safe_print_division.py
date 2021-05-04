@@ -9,7 +9,7 @@ Return: result of division
 def safe_print_division(a, b):
     try:
         div = a / b
-    except ZeroDivisionError:
+    except:
         div = None
     finally:
         print("Inside result: {}".format(div))
