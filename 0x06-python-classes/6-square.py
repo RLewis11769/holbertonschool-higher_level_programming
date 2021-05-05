@@ -7,21 +7,8 @@ class Square:
     """ Represents class defining Square parameters """
     def __init__(self, size=0, position=(0, 0)):
         """ Method that initializes size and position """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-
-        if not (isinstance(position, tuple) and
-                isinstance(position[0], int) and
-                isinstance(position[1], int) and
-                len(position) == 2 and
-                min(position) < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -51,9 +38,10 @@ class Square:
                 isinstance(value[1], int) and
                 len(position) == 2 and
                 min(value) < 0):
+            self.__position = (0, 0)
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__postion = value
+            self.__position = value
 
     def area(self):
         """ Method that calculates area by base * height of square """
@@ -64,11 +52,12 @@ class Square:
         """ Method to print square defined in class """
         if self.size == 0:
             print()
-        for downP in range(self.position[1]):
-            print()
-        for downS in range(self.size):
-            for acrossP in range(self.position[0]):
-                print(" ", end="")
-            for acrossS in range(self.size):
-                print("#", end="")
-            print()
+        else:
+            for downP in range(self.position[1]):
+                print()
+            for downS in range(self.size):
+                for acrossP in range(self.position[0]):
+                    print(" ", end="")
+                for acrossS in range(self.size):
+                    print("#", end="")
+                print()
