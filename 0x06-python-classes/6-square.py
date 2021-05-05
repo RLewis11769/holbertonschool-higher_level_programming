@@ -7,8 +7,8 @@ class Square:
     """ Represents class defining Square parameters """
     def __init__(self, size=0, position=(0, 0)):
         """ Method that initializes size and position """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -36,9 +36,8 @@ class Square:
         if not (isinstance(value, tuple) and
                 isinstance(value[0], int) and
                 isinstance(value[1], int) and
-                len(position) == 2 and
-                min(value) < 0):
-            self.__position = (0, 0)
+                len(value) == 2 and
+                min(value) >= 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
