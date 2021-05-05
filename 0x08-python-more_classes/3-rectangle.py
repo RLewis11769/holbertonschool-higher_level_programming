@@ -51,6 +51,8 @@ class Rectangle:
 
     def __str__(self):
         """ Method for producing readable output """
+        if self.height <= 0 or self.width <= 0:
+            return "\n"
         if self.height == 1:
             rect = ("#" * self.width) * self.height
         else:
