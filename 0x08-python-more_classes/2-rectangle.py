@@ -11,7 +11,7 @@ class Rectangle:
 
     @property
     def width(self):
-    """ Getter method for width """
+        """ Getter method for width """
         return self.__width
 
     @width.setter
@@ -25,7 +25,7 @@ class Rectangle:
 
     @property
     def height(self):
-    """ Getter method for height """
+        """ Getter method for height """
         return self.__height
 
     @height.setter
@@ -36,3 +36,13 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """ Method to calculate area """
+        area = self.height * self.width
+        return area
+
+    def perimeter(self):
+        """ Method to calculate perimeter """
+        per = self.height + self.height + self.width + self.width
+        return per
