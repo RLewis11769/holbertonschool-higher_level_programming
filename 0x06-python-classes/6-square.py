@@ -34,9 +34,9 @@ class Square:
     def position(self, value):
         """ Setter method to set position tuple and raise exception """
         if not (isinstance(value, tuple) and
+                len(value) == 2 and
                 isinstance(value[0], int) and
                 isinstance(value[1], int) and
-                len(value) == 2 and
                 min(value) >= 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
