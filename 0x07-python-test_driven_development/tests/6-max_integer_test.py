@@ -22,19 +22,20 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-10, 1, 2, 3]), 3)
         self.assertEqual(max_integer([0, 3, -7]), 3)
 
-    def same(self):
+    def test_same(self):
         """ Test cases with identical numbers at some point """
         self.assertEqual(max_integer([3, 3, 3, 5]), 5)
         self.assertEqual(max_integer([5, 5, 3, 5]), 5)
         self.assertEqual(max_integer([-1, -1, -1, -5]), -1)
 
-    def raises(self):
+    def test_raises(self):
         """ Test cases with incorrect type input """
         self.assertRaises(TypeError, max_integer("String"))
         self.assertRaises(TypeError, max_integer((1, 2)))
         self.assertRaises(TypeError, max_integer([1, 2.5]))
 
-    def other(self):
+    def test_other(self):
         """ Test cases where tests are not grouped """
         self.assertEqual(max_integer([]), None)
+        self.assertEqual(max_integer(), None)
         self.assertEqual(max_integer([3]), 3)
