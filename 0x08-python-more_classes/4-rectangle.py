@@ -23,6 +23,11 @@ class Rectangle:
                 rect += "\n"
         return rect
 
+    def __repr__(self):
+        """ Constructor method to print string representation of rect """
+        """ Used in conjunction with eval to print """
+        return "Rectangle({}, {})".format(self.width, self.height)
+
     @property
     def width(self):
         """ Getter method for width """
