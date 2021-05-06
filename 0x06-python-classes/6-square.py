@@ -44,7 +44,7 @@ class Square:
 
     def area(self):
         """ Method that calculates area by base * height of square """
-        area = self.__size ** 2
+        area = self.size ** 2
         return area
 
     def my_print(self):

@@ -7,7 +7,7 @@ class Square:
     """ Represents class defining Square parameters """
     def __init__(self, size=0):
         """ Method that initializes size """
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
@@ -25,7 +25,7 @@ class Square:
 
     def area(self):
         """ Method that calculates area by area by base * height of square """
-        area = self.__size * self.__size
+        area = self.size ** 2
         return area
 
     def my_print(self):
