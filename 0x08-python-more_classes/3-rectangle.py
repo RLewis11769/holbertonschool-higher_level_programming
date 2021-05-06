@@ -4,8 +4,10 @@
 
 
 class Rectangle:
-    """ Defines class with height and width attributes """
+    """ Defines attributes and methods of class """
+
     def __init__(self, width=0, height=0):
+        """ Initializes each instance of specific rectangle in class """
         self.width = width
         self.height = height
 
@@ -46,16 +48,16 @@ class Rectangle:
         """ Method to calculate perimeter """
         if self.height == 0 or self.width == 0:
             return 0
-        per = self.height * 2 + self.width * 2
-        return per
+        return (self. height * 2) + (self.width * 2)
 
     def __str__(self):
-        """ Method for producing readable output """
+        """ Constructor method for producing readable output """
+        rect = ""
         if self.height == 0 or self.width == 0:
-                return ""
-        if self.height == 1:
-            rect = ("#" * self.width) * self.height
-        else:
-            rect = (("#" * self.width) + "\n") * (self.height - 1)\
-                   + ("#" * self.width)
+                return rect
+        for down in range(self. height):
+            for across in range(self.width):
+                rect += "#"
+            if down is not self.height - 1:
+                rect += "\n"
         return rect
