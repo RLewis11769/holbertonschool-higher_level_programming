@@ -1,0 +1,143 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+""" Normal proper strings """
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+... Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
+... Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
+... rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
+... stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
+... cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
+... beatiorem! Iam ruinas videres""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Quonam modo.
+
+Utrum igitur tibi litteram videor an totas paginas commovere.
+
+Non autem hoc.
+
+igitur ne illud quidem.
+
+Fortasse id optimum, sed ubi illud.
+
+Plus semper voluptatis.
+
+Teneo, inquit, finem illi videri nihil dolere.
+
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+
+Si id dicis, vicimus.
+
+Inde sermone vario sex illa a Dipylo stadia confecimus.
+
+Sin aliud quid voles, postea.
+
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres>>>
+
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+... Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
+... Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
+... rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
+... stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
+... cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
+... beatiorem! Iam ruinas videres.""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Quonam modo.
+
+Utrum igitur tibi litteram videor an totas paginas commovere.
+
+Non autem hoc.
+
+igitur ne illud quidem.
+
+Fortasse id optimum, sed ubi illud.
+
+Plus semper voluptatis.
+
+Teneo, inquit, finem illi videri nihil dolere.
+
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+
+Si id dicis, vicimus.
+
+Inde sermone vario sex illa a Dipylo stadia confecimus.
+
+Sin aliud quid voles, postea.
+
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres.>>>
+
+>>> text_indentation("That^ doesn't mean anything")
+That^ doesn't mean anything>>>
+
+>>> text_indentation("Hello!")
+Hello!>>>
+
+>>> text_indentation(" ")
+ >>>
+
+""" Trickier strings """
+>>> text_indentation(".")
+.
+>>>
+
+>>> text_indentation("This works")
+This works>>> text_indentation("So does this")
+So does this>>>
+
+>>> text_indentation("Isn't this the normal ending?")
+Isn't this the normal ending?
+
+""" Playing with multiples in a row """
+
+>>> text_indentation("...")
+.
+.
+.
+
+>>> text_indentation(".    . ...")
+.
+     .
+.
+ .
+.
+.
+
+>>> text_indentation("? :")
+?
+ :
+
+>>> text_indentation(".?: ")
+.
+?
+: 
+
+>>> text_indentation("string.. space")
+string.
+.
+ space
+
+""" Not strings """
+>>> text_indentation(7)
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string
+
+>>> text_indentation([list])
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string
+
