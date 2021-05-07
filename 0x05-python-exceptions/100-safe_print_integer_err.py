@@ -8,6 +8,8 @@ Return: True if integer, False if not
 
 import sys
 
+
+
 def safe_print_integer_err(value):
     """ Regardless of input, prints integers not other types """
     try:
