@@ -12,7 +12,7 @@ class Rectangle:
         self.height = height
 
     def __str__(self):
-        """ Constructor method for producing readable output """
+        """ Builtin method for producing readable output """
         rect = ""
         if self.height == 0 or self.width == 0:
                 return rect
@@ -53,7 +53,7 @@ class Rectangle:
 
     def area(self):
         """ Method to calculate area """
-        area = self.__height * self.__width
+        area = self.height * self.width
         return area
 
     def perimeter(self):
@@ -61,15 +61,3 @@ class Rectangle:
         if self.height == 0 or self.width == 0:
             return 0
         return (self. height * 2) + (self.width * 2)
-
-    def __str__(self):
-        """ Constructor method for producing readable output """
-        rect = ""
-        if self.height == 0 or self.width == 0:
-                return rect
-        for down in range(self. height):
-            for across in range(self.width):
-                rect += "#"
-            if down is not self.height - 1:
-                rect += "\n"
-        return rect

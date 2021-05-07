@@ -74,14 +74,14 @@ class Rectangle:
 
     def area(self):
         """ Method to calculate area """
-        area = self.__height * self.__width
+        area = self.height * self.width
         return area
 
     def perimeter(self):
         """ Method to calculate perimeter """
         if self.height == 0 or self.width == 0:
             return 0
-        return (self. height * 2) + (self.width * 2)
+        return (self.height * 2) + (self.width * 2)
 
     def __str__(self):
         """ Constructor method for producing readable output """
