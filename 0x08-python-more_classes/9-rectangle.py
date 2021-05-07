@@ -96,7 +96,7 @@ class Rectangle:
             return rect_2
 
     @classmethod
-    """ Returns square when passed one parameter """
     def square(cls, size=0):
+        """ Initializes square when passed one parameter """
         square = cls(size, size)
         return square
