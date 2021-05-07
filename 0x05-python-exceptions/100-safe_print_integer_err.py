@@ -16,3 +16,4 @@ def safe_print_integer_err(value):
     except Exception as e:
         """ if exception, prints message from stderr to stdout """
         print("Exception: {}".format(e), file=sys.stderr)
+        return False
