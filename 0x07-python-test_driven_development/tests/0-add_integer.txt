@@ -1,29 +1,50 @@
 >>> add_integer = __import__('0-add_integer').add_integer
+
+""" Test cases with valid output """
 >>> add_integer(7, 3)
 10
+
 >>> add_integer(7, 3.5)
 10
->>> add_integer(7, "string")
-Traceback (most recent call last):
-	  ...
-TypeError: b must be an integer
->>> add_integer("abc", 7)
-Traceback (most recent call last):
-	  ...
-TypeError: a must be an integer
->>> add_integer(None)
-Traceback (most recent call last):
-	  ...
-TypeError: a must be an integer
->>> add_integer(3, 5, 7)
-Traceback (most recent call last):
-	  ...
-TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
->>> add_integer(None, 7)
-Traceback (most recent call last):
-	  ...
-TypeError: a must be an integer
->>> add_integer(14 + 9, 7)
-30
+
 >>> add_integer(0, 0)
 0
+
+>>> add_integer(14 + 9, 7)
+30
+
+>>> add_integer(3)
+101
+
+>>> add_integer(3.8, 4.5)
+7
+
+""" Test cases where a or b aren't integers """
+>>> add_integer(7, "string")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer("abc", 7)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(7, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+""" Other test cases with other errors """
+>>> add_integer(3, 5, 7)
+Traceback (most recent call last):
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+>>> add_integer(float('inf'), float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('inf'), 0)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
