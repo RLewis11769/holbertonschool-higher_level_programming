@@ -4,28 +4,38 @@
 >>> say_my_name("Rachel", "Lewis")
 My name is Rachel Lewis
 
->>> say_my_name("This is a string that's not an actual name", "Lewis")
-My name is This is a string that's not an actual name Lewis
+>>> say_my_name("This is a string that's not an actual name")
+My name is This is a string that's not an actual name 
+
+>>> say_my_name("Andre", str(3000))
+My name is Andre 3000
+
+>>> say_my_name("Shadow", str("The Cat"))
+My name is Shadow The Cat
 
 """ Here are some incorrect inputs """
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name(None, None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
 say_my_name(7, "Lewis")
 Traceback (most recent call last):
-	  ...
 TypeError: first_name must be a string
 
 >>> say_my_name((1, 2), "Lewis")
 Traceback (most recent call last):
-	  ...
 TypeError: first_name must be a string
 
->>> say_my_name("Hello", 100.5)
+>>> say_my_name("Andre", 3000)
 Traceback (most recent call last):
-	  ...
 TypeError: last_name must be a string
 
 >>> say_my_name("Hello", [1, 2, 3])
 Traceback (most recent call last):
-	  ...
 TypeError: last_name must be a string
 
 """ Spacing seems to matter so """
