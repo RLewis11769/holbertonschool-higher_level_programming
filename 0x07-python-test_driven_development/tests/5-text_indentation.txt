@@ -13,10 +13,17 @@ This has a ?
 <BLANKLINE>
 in it
 
->>> text_indentation("A list: with ?")
+>>> text_indentation("A list: here")
 A list:
 <BLANKLINE>
-with ?
+here
+
+>>> text_indentation("Make sure: one test has all 3. Why did you delete it?")
+Make sure:
+<BLANKLINE>
+one test has all 3.
+<BLANKLINE>
+Why did you delete it?
 <BLANKLINE>
 
 >>> text_indentation("This has different punctuation!")
