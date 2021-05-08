@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
 """
-prints a square of #
-@size: length of each side of square
+text_indentation - prints text with new line after each . ? and :
+@text: single string to add newlines to
 """
 
 
 def text_indentation(text):
+    """ Adds newlines after each ".", "?", and ":" """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
@@ -16,10 +17,13 @@ def text_indentation(text):
 
     split_at_p = text.split(".")
     for phrase in range(len(split_at_p)):
+        """ Phrase is entire string between . """
         for char in range(len(split_at_p[phrase])):
+            """ Removes spaces from front of string """
             if split_at_p[phrase][char] != " ":
                 split_at_p[phrase] = split_at_p[phrase][char:]
                 break
+        """ Adds newlines to end of string unless last line """
         if phrase < len(split_at_p) - 1:
             new_str1 += split_at_p[phrase] + ".\n\n"
         else:

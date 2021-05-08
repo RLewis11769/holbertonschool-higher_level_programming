@@ -26,6 +26,15 @@ one test has all 3.
 Why did you delete it?
 <BLANKLINE>
 
+>>> text_indentation("All 3. Plus: an ending? Maybe")
+All 3.
+<BLANKLINE>
+Plus:
+<BLANKLINE>
+an ending?
+<BLANKLINE>
+Maybe
+
 >>> text_indentation("This has different punctuation!")
 This has different punctuation!
 
