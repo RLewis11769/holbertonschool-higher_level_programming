@@ -1,0 +1,59 @@
+""" Test for 7-base_geometry.py """
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+""" Test cases for useable int entry """
+>>> bg.integer_validator("Value", 5)
+
+>>> bg.integer_validator("Value", int(5.75))
+
+>>> bg.integer_validator("Value", 9999999999999999999)
+
+>>> bg.integer_validator("Different name", 7)
+
+""" Improper entry """
+>>> bg.integer_validator("Value", "John")
+Traceback (most recent call last):
+TypeError: Value must be an integer
+
+>>> bg.integer_validator("Value", None)
+Traceback (most recent call last):
+TypeError: Value must be an integer
+
+>>> bg.integer_validator("Value", )
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator("Value", "")
+Traceback (most recent call last):
+TypeError: Value must be an integer
+
+>>> bg.integer_validator("Value")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator("Value", 2.5)
+Traceback (most recent call last):
+TypeError: Value must be an integer
+
+>>> bg.integer_validator(None)
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator(None, 7.5)
+Traceback (most recent call last):
+TypeError: None must be an integer
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+""" Correct data type but unusable data under 0 """
+>>> bg.integer_validator("Value", 0)
+Traceback (most recent call last):
+ValueError: Value must be greater than 0
+
+>>> bg.integer_validator("Value", -7)
+Traceback (most recent call last):
+ValueError: Value must be greater than 0
