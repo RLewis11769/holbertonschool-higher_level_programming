@@ -57,6 +57,14 @@ TypeError: integer_validator() takes 3 positional arguments but 4 were given
 Traceback (most recent call last):
 TypeError: Value must be an integer
 
+>>> bg.integer_validator("Value", (1, ))
+Traceback (most recent call last):
+TypeError: Value must be an integer
+
+>>> bg.integer_validator("Value", {7})
+Traceback (most recent call last):
+TypeError: Value must be an integer
+
 >>> bg.integer_validator("Value", True)
 Traceback (most recent call last):
 TypeError: Value must be an integer
@@ -64,6 +72,10 @@ TypeError: Value must be an integer
 >>> bg.integer_validator()
 Traceback (most recent call last):
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
 
 """ Correct data type but unusable data under 0 """
 >>> bg.integer_validator("Value", 0)
@@ -73,12 +85,3 @@ ValueError: Value must be greater than 0
 >>> bg.integer_validator("Value", -7)
 Traceback (most recent call last):
 ValueError: Value must be greater than 0
-
-""" I have no idea why I would test these here but whatever """
->>> area()
-Traceback (most recent call last):
-NameError: name 'area' is not defined
-
->>> area(7)
-Traceback (most recent call last):
-NameError: name 'area' is not defined
