@@ -10,6 +10,6 @@ Return: True or False
 
 def inherits_from(obj, a_class):
     """ Returns boolean if obj inherits from a_class directly or indirectly """
-    if a_class is bool:
+    if type(obj) is a_class:
         return False
     return issubclass(type(obj), a_class)
