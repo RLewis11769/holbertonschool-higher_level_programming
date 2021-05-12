@@ -3,6 +3,7 @@
 """
 to_json_string - returns JSON representation of string
 @my_obj: object/string to find JSON representation of
+Return: JSON representation of my_obj (always string type)
 """
 
 

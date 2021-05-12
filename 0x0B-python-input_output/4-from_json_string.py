@@ -3,6 +3,7 @@
 """
 from_json_string - returns object represented by JSON object
 @my_str: JSON string to find string of
+Return: python object (actual data type)
 """
 
 
