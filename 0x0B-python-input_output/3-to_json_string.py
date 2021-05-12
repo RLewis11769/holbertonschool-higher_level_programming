@@ -8,6 +8,7 @@ to_json_string - returns JSON representation of string
 
 import json
 
+
 def to_json_string(my_obj):
     """ finds JSON representation of my_obj """
     jsonStr = json.dumps(my_obj)
