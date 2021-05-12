@@ -19,5 +19,5 @@ class Square(Rectangle):
         super().__init__(size, size)
 
     def __str__(self):
-        """ Builtin method required "Rectangle" hardcoded in Rectangle class """
+        """ Required bc "Rectangle" hardcoded in Rectangle class """
         return "[Square] {}/{}".format(self.__size, self.__size)
