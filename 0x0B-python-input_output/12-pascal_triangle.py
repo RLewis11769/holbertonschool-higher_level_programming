@@ -19,6 +19,7 @@ Plan: Create triangle and row lists, append
 
 
 def pascal_triangle(n):
+    """ Creates list of lists of representation of Pascal's triangle """
     triangle = []
     if n <= 0:
         return triangle
