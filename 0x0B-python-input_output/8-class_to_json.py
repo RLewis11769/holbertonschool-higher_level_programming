@@ -7,9 +7,6 @@ Return: dictionary description for obj
 """
 
 
-import json
-
-
 def class_to_json(obj):
     """  Finds dict for obj """
     return obj.__dict__
