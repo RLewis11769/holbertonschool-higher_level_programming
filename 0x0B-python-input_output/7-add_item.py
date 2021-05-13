@@ -2,7 +2,6 @@
 
 """ Loads, adds, and saves command arguments to new file """
 
-""" Add items via command line - sys.argv[] """
 import json
 import sys
 
