@@ -33,6 +33,15 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
+    def update(self, *args):
+        """ Updates attribute values after initialization """
+        arg_name = ['id', 'width', 'height', 'x', 'y']
+        if len(args) > 0:
+            numArgs = 0
+            for attr in range(len(args)):
+                setattr(self, arg_name[numArgs], args[numArgs])
+                numArgs += 1
+
     def __str__(self):
         """ Builtin that produces readable output """
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
