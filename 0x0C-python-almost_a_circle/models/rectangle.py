@@ -11,11 +11,11 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Instantiates all attributes of class """
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     def area(self):
         """ Calculates area """
@@ -23,7 +23,12 @@ class Rectangle(Base):
 
     def display(self):
         """ Prints rectangle instance of #s """
+        """ Coordinates for position are x-axis (LR) and y-axis (NS) """
+        for coordY in range(self.y):
+            print()
         for column in range(self.height):
+            for coordLR in range(self.x):
+                print(" ", end="")
             for row in range(self.width):
                 print("#", end="")
             print()
