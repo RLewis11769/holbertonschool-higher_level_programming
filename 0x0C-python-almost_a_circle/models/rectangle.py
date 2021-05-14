@@ -23,6 +23,7 @@ class Rectangle(Base):
             raise TypeError("{} must be an integer".format(name))
 
     def value_validator(self, name, value):
+        """ Validates proper value input """
         if name == "height" or name == "width":
             if value <= 0:
                 raise ValueError("{} must be > 0".format(name))
@@ -55,7 +56,7 @@ class Rectangle(Base):
             for attr in range(len(args)):
                 setattr(self, arg_name[numArgs], args[numArgs])
                 numArgs += 1
-        """ if kwargs, put into dict - if key == arg_name, set to value """
+        """ Put kwargs into dict - if key matches arg_name, set to value """
         kwargs_dict = kwargs
         for key, value in kwargs_dict.items():
             for attr in range(len(arg_name)):
@@ -67,11 +68,6 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
                                                 self.id, self.x, self.y,
                                                 self.width, self.height)
-
-    def int_validator(self, name, value):
-        """ Validates proper integer input """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
 
     @property
     def width(self):
