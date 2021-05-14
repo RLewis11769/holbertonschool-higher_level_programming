@@ -17,6 +17,23 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def area(self):
+        """ Calculates area """
+        return self.width * self.height
+
+    def display(self):
+        """ Prints rectangle instance of #s """
+        for column in range(self.height):
+            for row in range(self.width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        """ Builtin that produces readable output """
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.x, self.y,
+                                                self.width, self.height)
+
     @property
     def width(self):
         """ Gets private width attribute """
@@ -76,14 +93,3 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
-
-    def area(self):
-        """ Calculates area """
-        return self.width * self.height
-
-    def display(self):
-        """ Prints rectangle instance of #s """
-        for column in range(self.height):
-            for row in range(self.width):
-                print("#", end="")
-            print()
