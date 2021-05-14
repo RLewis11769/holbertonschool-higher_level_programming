@@ -33,14 +33,21 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Updates attribute values after initialization """
         arg_name = ['id', 'width', 'height', 'x', 'y']
+        """ If args only, sets attribute to correct arg_name """
         if len(args) > 0:
             numArgs = 0
             for attr in range(len(args)):
                 setattr(self, arg_name[numArgs], args[numArgs])
                 numArgs += 1
+        """ if kwargs, put into dict - if key == arg_name, set to value """
+        kwargs_dict = kwargs
+        for key, value in kwargs_dict.items():
+            for attr in range(len(arg_name)):
+                if key == arg_name[attr]:
+                    setattr(self, arg_name[attr], value)
 
     def __str__(self):
         """ Builtin that produces readable output """
