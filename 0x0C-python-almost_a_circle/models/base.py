@@ -28,9 +28,9 @@ class Base:
     def from_json_string(json_string):
         """ Returns list from json string """
         if json_string is None:
-            return "[]"
+            return []
         if json_string == "[]":
-            return "[]"
+            return []
         list_str = json.loads(json_string)
         return list_str
 
