@@ -7,6 +7,7 @@ import json
 
 
 class Base:
+
     """ Defines attributes and methods of Base class """
 
     """ Class attributes """
@@ -24,8 +25,18 @@ class Base:
             self.id = Base.__nb_objects
 
     @staticmethod
+    def from_json_string(json_string):
+        """ Returns list from json string """
+        if json_string is None:
+            return "[]"
+        if json_string == "[]":
+            return "[]"
+        list_str = json.loads(json_string)
+        return list_str
+
+    @staticmethod
     def to_json_string(list_dictionaries):
-        """ Returns json string of dictionary """
+        """ Returns json string from dictionary """
         if list_dictionaries is None:
             return "[]"
         if list_dictionaries == "[]":
