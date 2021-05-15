@@ -4,7 +4,7 @@
 
 
 from models.base import Base
-
+import json
 
 class Rectangle(Base):
     """ Defines attributes and methods of Rectangle class """
@@ -62,7 +62,13 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ Returns dictionary representation of rectangle """
-        return vars(self)
+        dict_rect = {}
+        dict_rect["id"] = self.id
+        dict_rect["width"] = self.width
+        dict_rect["height"] = self.height
+        dict_rect["x"] = self.x
+        dict_rect["y"] = self.y
+        return dict_rect
 
     def __str__(self):
         """ Builtin that produces readable output """
