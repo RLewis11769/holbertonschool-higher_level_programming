@@ -3,6 +3,9 @@
 """ Base module -- manage id attribute and avoid duplicating code """
 
 
+import json
+
+
 class Base:
     """ Defines attributes and methods of Base class """
 
@@ -19,3 +22,12 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """ Returns json string of dictionary """
+        if list_dictionaries is None:
+            return "[]"
+        if list_dictionaries == "[]":
+            return "[]"
+        jsonStr = json.dumps(list_dictionaries)
+        return jsonStr
