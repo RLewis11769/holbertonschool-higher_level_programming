@@ -37,6 +37,15 @@ class Square(Rectangle):
                 if key == arg_name[attr]:
                     setattr(self, arg_name[attr], value)
 
+    def to_dictionary(self):
+        """ Returns dictionary representation of square """
+        dict_sq = {}
+        dict_sq["id"] = self.id
+        dict_sq["size"] = self.size
+        dict_sq["x"] = self.x
+        dict_sq["y"] = self.y
+        return dict_sq
+
     @property
     def size(self):
         """ Gets private size attribute """
