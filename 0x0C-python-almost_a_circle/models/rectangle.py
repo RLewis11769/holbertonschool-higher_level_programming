@@ -4,7 +4,7 @@
 
 
 from models.base import Base
-import json
+
 
 class Rectangle(Base):
     """ Defines attributes and methods of Rectangle class """
