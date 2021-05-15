@@ -18,8 +18,24 @@ class Square(Rectangle):
     def __str__(self):
         """ Builtin that produces readable output """
         return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
-                                                self.id, self.x, self.y,
-                                                self.width)
+                                             self.id, self.x, self.y,
+                                             self.width)
+
+    def update(self, *args, **kwargs):
+        """ Updates attribute values """
+        arg_name = ['id', 'size', 'x', 'y']
+        """ If args only, sets attribute to correct arg_name """
+        if len(args) > 0:
+            numArgs = 0
+            for attr in range(len(args)):
+                setattr(self, arg_name[numArgs], args[numArgs])
+                numArgs += 1
+        """ Put kwargs into dict - if key matches arg_name, set to value """
+        kwargs_dict = kwargs
+        for key, value in kwargs_dict.items():
+            for attr in range(len(arg_name)):
+                if key == arg_name[attr]:
+                    setattr(self, arg_name[attr], value)
 
     @property
     def size(self):
