@@ -67,3 +67,25 @@ class Base:
         """ Updates file based on dictionary value """
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns list of instances """
+        filename = cls.__name__ + ".json"
+        instance_list = []
+        try:
+            """ Read from file (in json format) """
+            with open(filename) as jsonFile:
+                jsonStr = jsonFile.read()
+            """ Convert json string into list """
+            new_list = cls.from_json_string(jsonStr)
+            for instance in new_list:
+                """ Convert each list item to dict """
+                instance_dict = dict(instance)
+                """ Create new instance based on dict """
+                instance_create = cls.create(**instance_dict)
+                """ Add each instance to list """
+                instance_list.append(instance_create)
+            return instance_list
+        except:
+            return instance_list
