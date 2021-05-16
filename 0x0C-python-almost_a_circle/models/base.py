@@ -56,3 +56,14 @@ class Base:
         jsonStr = cls.to_json_string(obj_list)
         with open(filename, 'w') as jsonFile:
             jsonFile.write(jsonStr)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Creates instance with attributes set """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        """ Updates file based on dictionary value """
+        dummy.update(**dictionary)
+        return dummy
