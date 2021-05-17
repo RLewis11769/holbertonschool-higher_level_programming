@@ -15,9 +15,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ Instantiates public id attribute """
-        if id is not None and id <= Base.__nb_objects:
-            raise ValueError("Please choose different id")
+        """ Instantiates public id attribute - not identical """
         if id is not None:
             self.id = id
         else:
