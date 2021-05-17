@@ -17,14 +17,10 @@ class TestBase(unittest.TestCase):
         b2 = Base(7)
         self.assertEqual(b2.id, 7)
         b3 = Base()
+        b4 = Base()
         b5 = Base(15)
         b6 = Base()
-        self.assertEqual(b6.id, 3)
-
-    def test_id_error(self):
-        """ Tests for improper id assignment """
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
+        self.assertEqual(b6.id, 4)
 
 if __name__ == '__main__':
     unittest.main()
