@@ -28,7 +28,7 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(-3, 7)
         with self.assertRaises(ValueError):
-            Rectangle(800, 0)
+            Rectangle(0, 800)
         with self.assertRaises(TypeError):
             Rectangle(3, "str")
         with self.assertRaises(ValueError):
@@ -60,6 +60,30 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(r5), "[Rectangle] (1) 10/10 - 5/5")
         r6 = Rectangle(2, 7)
         self.assertEqual(str(r6), "[Rectangle] (8) 0/0 - 2/7")
+
+    def test_update(self):
+        """ Tests for no-keyword argument update method """
+        r = Rectangle(1, 1, 0, 0, 1)
+        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/1")
+        r.update(19)
+        self.assertEqual(str(r), "[Rectangle] (19) 0/0 - 1/1")
+        r. update(800, 4, 5, 2, 3)
+        self.assertEqual(str(r), "[Rectangle] (800) 2/3 - 4/5")
+
+    def test_update_kwargs(self):
+        """ Tests for key-worded argument update method """
+        r = Rectangle(1, 1, 0, 0, 1)
+        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/1")
+        r.update(height=76)
+        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/76")
+        r.update(y=1, id=99, width=8, x=4)
+        self.assertEqual(str(r), "[Rectangle] (99) 4/1 - 8/76")
+
+    def test_dict(self):
+        """ Tests for to_dictionary method """
+        r = Rectangle(65, 9, 6, 3, 4)
+        d = r.to_dictionary()
+        self.assertEqual(d, {'x': 6, 'y': 3, 'id': 4, 'height': 9, 'width': 65})
 
 if __name__ == '__main__':
     unittest.main()
