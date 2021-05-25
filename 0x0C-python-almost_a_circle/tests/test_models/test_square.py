@@ -17,6 +17,13 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.x, 2)
         self.assertEqual(s.y, 3)
         self.assertEqual(s.id, 4)
+        s1 = Square(1, 2)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        s2 = Square(1, 2, 3)
+        self.assertEqual(s2.size, 1)
+        self.assertEqual(s2.x, 2)
+        self.assertEqual(s2.y, 3)
 
     def test_validator_errors(self):
         """ Tests with incorrect input """
@@ -32,6 +39,8 @@ class TestSquare(unittest.TestCase):
             Square("yes", 7, 5)
         with self.assertRaises(ValueError):
             Square(0, 8, 5)
+        with self.assertRaises(ValueError):
+            Square(-8, 1, 1)
 
     def test_area(self):
         """ Tests for area method """
