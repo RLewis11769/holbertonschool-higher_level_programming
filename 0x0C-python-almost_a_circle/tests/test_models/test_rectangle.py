@@ -7,8 +7,8 @@ import unittest
 from models.rectangle import Rectangle
 
 
-class TestBase(unittest.TestCase):
-    """ Test cases for base.py """
+class TestRectangle(unittest.TestCase):
+    """ Test cases for rectangle.py """
 
     def test_attributes(self):
         """ Tests for proper attribute assignment """
