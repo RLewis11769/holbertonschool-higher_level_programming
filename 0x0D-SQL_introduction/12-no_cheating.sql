@@ -1,6 +1,6 @@
--- Updates entry based on id
+-- Updates entry based on name
 UPDATE second_table
 SET
 	score = 10
 WHERE
-	id = 3;
+	name = "Bob";
