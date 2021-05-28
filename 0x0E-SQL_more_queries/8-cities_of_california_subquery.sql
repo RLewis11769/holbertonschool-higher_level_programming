@@ -1,10 +1,11 @@
 -- Use subquery to find all California cities
 SELECT *
-FROM hbtn_0d_usa.cities
+FROM cities
 WHERE
 	state_id IN (SELECT
 		id
 	FROM
-		hbtn_0d_usa.states
+		states
 	WHERE
-		name = 'California');
+		name = 'California')
+ORDER BY id ASC;
