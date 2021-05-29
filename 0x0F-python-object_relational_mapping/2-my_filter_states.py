@@ -9,7 +9,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE '{}'".format(argv[4]))
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
+                   .format(argv[4]))
 
     data = cursor.fetchall()
 
