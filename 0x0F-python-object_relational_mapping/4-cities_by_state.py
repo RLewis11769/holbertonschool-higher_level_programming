@@ -9,7 +9,9 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=argv[1],
                          passwd=argv[2], db=argv[3])
     with db.cursor() as cursor:
-        cursor.execute("SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON cities.state_id = states.id")
+        cursor.execute("""SELECT cities.id, cities.name, states.name
+        FROM cities INNER JOIN states ON cities.state_id = states.id""")
+
         data = cursor.fetchall()
 
         for entry in data:
