@@ -6,11 +6,11 @@ if __name__ == "__main__":
     from sys import argv
     import MySQLdb
 
-
-    db = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2], db=argv[3])
+    db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name = '{}'".format(argv[4]))
+    cursor.execute("SELECT * FROM states WHERE name LIKE '{}'".format(argv[4]))
+
     data = cursor.fetchall()
 
     for entry in data:
