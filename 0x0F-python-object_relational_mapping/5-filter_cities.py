@@ -22,4 +22,5 @@ if __name__ == "__main__":
             if x != len(data) - 1:
                 print("{}, ".format(data[x][0]), end="")
             else:
-                print("{}".format(data[x][0]))
+                print("{}".format(data[x][0]), end="")
+        print()
