@@ -5,23 +5,24 @@ const args = process.argv.slice(2);
 if (args.length === 1) {
   console.log(0);
 } else if (args[0]) {
-  console.log(second(args));
+  console.log(secondLargest(args));
 } else {
   console.log(0);
 }
 
-function second (arr) {
+function secondLargest (arr) {
   let max = -Infinity;
   let result = -Infinity;
-  let x, num;
+  let x;
+  let num;
 
-  for (x = 0; x < arr.length; x++) {
-    num = Number(arr[x]);
+  for (x of arr) {
+    num = Number(x);
     if (num > max) {
-      [result, max] = [max, num];
-    } else {
-      result = num;
+      [result, max] = [max, num]; // save previous max
+    } else if (num < max && num > result) {
+      result = num; // new second biggest
     }
   }
-  return (result);
+  return result;
 }
