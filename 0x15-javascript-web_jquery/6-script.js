@@ -1,5 +1,4 @@
-// Get text of DIV#character name from api
-$.get('https://swapi-api.hbtn.io/api/people/5/?format=json', function (data) {
-  const name = data.name;
-  $('DIV#character').text(name);
+// Change text of header on click DIV#update_item
+$('DIV#update_header').click(function () {
+  $('header').text('New Header!!!');
 });
